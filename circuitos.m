@@ -32,8 +32,19 @@ function circuitos(coeficientes, solucoes, unidade, variaveis)
 	if (size(solucoes, 1) == 1)
 		solucoes = solucoes.';
 	endif
-	
-	variaveis = cellstr(variaveis);
+
+	aux = [];
+	j=1;
+	cols = size(variaveis, 2);
+	if (size(variaveis, 1) == 1)
+		for i=1:cols/2
+			aux(i,:) = variaveis(1,j:j+1);
+			j+=2;
+		endfor
+		variaveis = cellstr(aux);
+	else
+		variaveis = cellstr(variaveis);
+	endif
 
 	x = coeficientes\solucoes;
 
