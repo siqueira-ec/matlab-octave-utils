@@ -1,6 +1,6 @@
-function [trainSet, copy] = split_dataset(dataset, split_ratio)
+function [trainSet, copy] = splitDataset(dataset, split_ratio)
 
-	trainSize = uint8(size(dataset,1)*split_ratio);
+	trainSize = double(size(dataset,1)*split_ratio);
 	trainSet = [];
 	copy = dataset;
 	while size(trainSet, 1) < trainSize

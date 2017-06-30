@@ -6,6 +6,5 @@ function [summaries] = summarizeByClass(dataset)
 			summaries.(num2str(i-1)) = [];
 		endif
 		summaries.(num2str(i-1)) = [summaries.(num2str(i-1)); summarize(separated.(num2str(i-1)))];
-		%for j=1:size(separated.(num2str(i-1)),1)
-		%endfor
 	endfor
+endfunction
